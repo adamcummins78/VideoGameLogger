@@ -15,17 +15,27 @@ public class VideoGame
 		List<string> ESRB = new List<string>();
 
 		Console.WriteLine("Enter a video game title: ");
-			var NewTitle = Console.ReadLine();
+			string NewTitle = Console.ReadLine();
 
 		Console.WriteLine("Enter a rating from 1-10 (decimals allowed): ");
 			double NewRating = Convert.ToDouble(Console.ReadLine());
 
 		Console.WriteLine("Enter the ERSB rating (E, T, M, etc.): ");
-			var NewESRB = Console.ReadLine().ToUpper();
+			string NewESRB = Console.ReadLine().ToUpper();
 
 		Title.Add(NewTitle);
 		Rating.Add(NewRating);
 		ESRB.Add(NewESRB);
+
+		string CSVPath = "CSV/GameList.csv";
+
+		var Game = new Dictionary<string, string>()
+        {
+			{"Title: ", Title}
+			{"Rating: ", Rating}
+			{"ESRB: ", ESRB}
+			
+        }
 
 	}
 }
