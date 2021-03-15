@@ -14,3 +14,7 @@ C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\obj\MCD\Debug\net
 C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\obj\MCD\Debug\net5.0\ref\GameLogger.dll
 C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\obj\MCD\Debug\net5.0\GameLogger.pdb
 C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\obj\MCD\Debug\net5.0\GameLogger.genruntimeconfig.cache
+C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\bin\MCD\Debug\net5.0\Apache.Arrow.dll
+C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\bin\MCD\Debug\net5.0\Microsoft.Data.Analysis.dll
+C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\bin\MCD\Debug\net5.0\Microsoft.ML.DataView.dll
+C:\CodeLouisville_TreeHouse\C-sharp\VideoGameLogger\GameLogger\obj\MCD\Debug\net5.0\GameLogger.csproj.CopyComplete
