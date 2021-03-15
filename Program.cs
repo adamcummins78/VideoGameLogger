@@ -20,7 +20,7 @@ namespace GameLogger
 			{
 				Console.WriteLine($"Welcome to Video Game Logger, {name}!");
 				
-				Console.Write("Please enter a number to make a selection: \n1 - Add new game \n2 - View games in list \nAny other character - Exit program \nSelection: ");
+				Console.Write("Please enter a number to make a selection: \n1 - Add new game \n2 - View games in list \n3 - Export list to Excel \n4 - Exit program \nSelection: ");
 				var choice  = (Console.ReadLine());
 				Console.WriteLine();
 
@@ -38,9 +38,21 @@ namespace GameLogger
 						Console.WriteLine();
 					}
 
-				else
+				else if(choice == "3")
+					{	
+						string CSVPath = "CSV/GameList.csv";
+						String csv = String.Join(Environment.NewLine, Title.Select(g => $"{g}"));
+						System.IO.File.WriteAllText(CSVPath, csv);
+					}
+
+				else if(choice == "4")
 					{
 						Environment.Exit(0);
+					}
+
+				else
+					{
+						Console.WriteLine("Invalid Entry");
 					}
 			}
 
