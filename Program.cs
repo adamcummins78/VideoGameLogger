@@ -34,7 +34,8 @@ namespace GameLogger
 					}
 				else if(choice == "2")
 					{
-						Console.WriteLine("print list");
+						Title.OrderByDescending(x => x).ToList().ForEach(x => { Console.WriteLine(x); });
+						Console.WriteLine();
 					}
 
 				else
