@@ -11,7 +11,38 @@ namespace GameLogger
     {
         static void Main(string[] args)
         {
-				VideoGame.addGame();
+			List<string> Title = new List<string>();
+
+				Console.Write("Please enter your name: ");
+				string name = Console.ReadLine();
+
+			while(true)
+			{
+				Console.WriteLine($"Welcome to Video Game Logger, {name}!");
+				
+				Console.Write("Please enter a number to make a selection: \n1 - Add new game \n2 - View games in list \nAny other character - Exit program \nSelection: ");
+				var choice  = (Console.ReadLine());
+				Console.WriteLine();
+
+				if(choice == "1")
+					{
+						Console.Write("Enter a video game title: ");
+						string NewTitle = Console.ReadLine();
+
+						Title.Add(NewTitle);
+						Console.WriteLine();
+					}
+				else if(choice == "2")
+					{
+						Console.WriteLine("print list");
+					}
+
+				else
+					{
+						Environment.Exit(0);
+					}
+			}
+
         }
     }
 
@@ -19,49 +50,17 @@ namespace GameLogger
 	{
 
 		public string Title { get; set; }
-		public string Rating { get; set; }
-		public string ESRB { get; set; }
 
 		public static void addGame()
 		{
-			List<string> Title = new List<string>();
-			List<string> Rating = new List<string>();
-			List<string> ESRB = new List<string>();
 
-			Console.WriteLine("Enter a video game title: ");
-			string NewTitle = Console.ReadLine();
+			
 
-			Console.WriteLine("Enter a rating from 1-10: ");
-			string NewRating = (Console.ReadLine());
-
-			Console.WriteLine("Enter the ERSB rating (E, T, M, etc.): ");
-			string NewESRB = Console.ReadLine().ToUpper();
-
-			Title.Add(NewTitle);
-			Rating.Add(NewRating);
-			ESRB.Add(NewESRB);
-
-			string CSVPath = "CSV/GameList.csv";
-
-			var Game = new Dictionary<string, List<string>>()
-			{
-				["Title: "] = Title,
-				["Rating: "] = Rating,
-				["ESRB: "] = ESRB
-
-			};
-
-
-			String csv = String.Join(Environment.NewLine, Game.Select(g => $"{g.Key}{g.Value}"));
-			System.IO.File.WriteAllText(CSVPath, csv);
 		}
 
 		public static void ViewGameList()
 		{
-			foreach (string i in Title)
-            {
-                Console.WriteLine(i);
-            }
+			
 			
 		}
 	}
