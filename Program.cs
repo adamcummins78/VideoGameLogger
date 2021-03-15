@@ -1,9 +1,5 @@
 ﻿using System;
-using System;
-using System.Collections.Generic;
-using Microsoft.Data.Analysis;
-using System.Linq;
-using System.IO;
+
 
 namespace GameLogger
 {
@@ -11,10 +7,9 @@ namespace GameLogger
     {
         static void Main(string[] args)
         {
-			List<string> Title = new List<string>();
-
 				Console.Write("Please enter your name: ");
 				string name = Console.ReadLine();
+				var videoGame = new VideoGame();
 
 			while(true)
 			{
@@ -26,23 +21,16 @@ namespace GameLogger
 
 				if(choice == "1")
 					{
-						Console.Write("Enter a video game title: ");
-						string NewTitle = Console.ReadLine();
-
-						Title.Add(NewTitle);
-						Console.WriteLine();
+						videoGame.addGame();
 					}
 				else if(choice == "2")
 					{
-						Title.OrderByDescending(x => x).ToList().ForEach(x => { Console.WriteLine(x); });
-						Console.WriteLine();
+						videoGame.ViewGameList();
 					}
 
 				else if(choice == "3")
 					{	
-						string CSVPath = "CSV/GameList.csv";
-						String csv = String.Join(Environment.NewLine, Title.Select(g => $"{g}"));
-						System.IO.File.WriteAllText(CSVPath, csv);
+						CSVReader.Reader(videoGame.Title);
 					}
 
 				else if(choice == "4")
@@ -58,23 +46,4 @@ namespace GameLogger
 
         }
     }
-
-    public class VideoGame
-	{
-
-		public string Title { get; set; }
-
-		public static void addGame()
-		{
-
-			
-
-		}
-
-		public static void ViewGameList()
-		{
-			
-			
-		}
-	}
 }
